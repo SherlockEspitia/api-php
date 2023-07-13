@@ -1,9 +1,9 @@
 {
     "conexion":{
         "server":"localhost",
-        "user":"ut2xgblgyioex",
-        "password":"b+qiD2[m:91)",
-        "database": "dbe5cjjgbhs6ub",
-        "port":"443"        
+        "user":"user",
+        "password":"pass",
+        "database": "database",
+        "port":"300"        
     }    
 }
