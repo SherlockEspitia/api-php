@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# estas lineas son para quitar la ext .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+# estas lineas son para quitar la ext .html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html
+
+# Si la ruta no es un archivo existente, ni una carpeta
+# Reescibir al index
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+?)/?$ index.php?url=$1 [L,QSA]
+
+<ifModule mod_headers.c>
+ Header set Access-Control-Allow-Origin: *
+ Header set Access-Control-Allow-Origin: Authorization
+ Header set Access-Control-Allow-Origin: GET, POST, PUT, DELETE, OPTIONS
+</ifModule>
